@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace MVC_Task_01._09._2018.Models.MCSDb
 {
     using System;
@@ -17,13 +19,17 @@ namespace MVC_Task_01._09._2018.Models.MCSDb
         public int? intComponentId { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayName("Дата починки")]
+        [DataType(DataType.Date)]
         public DateTime dRepairDate { get; set; }
 
         public int? intStopReason { get; set; }
 
+        [DisplayName("Описание проблемы")]
         [StringLength(2000)]
         public string strDescriptionProblem { get; set; }
 
+        [DisplayName("Пробег")]
         public double? intMeterDue { get; set; }
 
         public int? intPmChecklist { get; set; }

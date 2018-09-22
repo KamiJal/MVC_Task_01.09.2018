@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace MVC_Task_01._09._2018.Models.MCSDb
 {
     using System;
@@ -20,6 +22,7 @@ namespace MVC_Task_01._09._2018.Models.MCSDb
         public int intLocationId { get; set; }
 
         [StringLength(500)]
+        [DisplayName("Расположение")]
         public string strLocationName { get; set; }
 
         public int? intMajorLocationID { get; set; }

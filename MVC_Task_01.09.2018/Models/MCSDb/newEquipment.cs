@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace MVC_Task_01._09._2018.Models.MCSDb
 {
     using System;
@@ -18,6 +20,7 @@ namespace MVC_Task_01._09._2018.Models.MCSDb
         [Key]
         public int intEquipmentID { get; set; }
 
+        [DisplayName("Гаражный номер")]
         [StringLength(50)]
         public string intGarageRoom { get; set; }
 

@@ -24,7 +24,9 @@ namespace MVC_Task_01._09._2018.Controllers
         // GET: Stops
         public ActionResult Index()
         {
-            return View();
+            var stops = _context.TrackServiceHistory.Take(100).ToList();
+
+            return View(stops);
         }
     }
 }
