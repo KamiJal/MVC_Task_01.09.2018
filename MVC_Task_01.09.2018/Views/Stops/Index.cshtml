@@ -6,46 +6,38 @@
 }
 
 <h2>Остановы</h2>
-<h4>Показываем только первые 100 позиций для экономии ресурсов, так как это учебный пример.</h4>
-<br/>
+<h4>Показываем только найденные первые 100 позиций для экономии ресурсов, так как это учебный пример.</h4>
+<br />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.newEquipment.intGarageRoom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TablesLocation.strLocationName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dRepairDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.strDescriptionProblem)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.intMeterDue)
-        </th>
-    </tr>
+@if (Model.Any())
+{
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.newEquipment.intGarageRoom)</th>
+            <th>@Html.DisplayNameFor(model => model.TablesLocation.strLocationName)</th>
+            <th>@Html.DisplayNameFor(model => model.dRepairDate)</th>
+            <th>@Html.DisplayNameFor(model => model.strDescriptionProblem)</th>
+            <th>@Html.DisplayNameFor(model => model.intMeterDue)</th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.newEquipment.intGarageRoom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TablesLocation.strLocationName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dRepairDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.strDescriptionProblem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.intMeterDue)
-        </td>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.newEquipment.intGarageRoom)</td>
+                <td>@Html.DisplayFor(modelItem => item.TablesLocation.strLocationName)</td>
+                <td>@Html.DisplayFor(modelItem => item.dRepairDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.strDescriptionProblem)</td>
+                <td>@Html.DisplayFor(modelItem => item.intMeterDue)</td>
+            </tr>
+        }
+
+    </table>
+
+    <h6>Показано элементов: @Model.Count()</h6>
+}
+else
+{
+    <h3>Данных по запросу не найдено!</h3>
 }
 
-</table>
+
